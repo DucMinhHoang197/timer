@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react";
 import "./App.css";
 const App = () => {
   const [timer, setTimer] = useState(0);
-  const [active, setActive] = useState(false);
-  // const [pause, setPause] = useState(false);
   const countRef = useRef(null);
   const FormatTime = () => {
     const getSeconds = `0${timer % 60}`.slice(-2);
@@ -15,22 +13,17 @@ const App = () => {
   };
 
   const handelStart = () => {
-    setActive(true);
-
     countRef.current = setInterval(() => {
       setTimer((timer) => timer + 1);
     }, 1000);
   };
 
   const handlePause = () => {
-    setActive(false);
     clearInterval(countRef.current);
   };
 
   const handleReset = () => {
-    setActive(false);
     clearInterval(countRef.current);
-    // setPause(false);
     setTimer(0);
   };
 
