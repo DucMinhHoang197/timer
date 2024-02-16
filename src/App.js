@@ -13,8 +13,7 @@ const App = () => {
 
     return `${getHours} : ${getMinutes} : ${getSeconds}`;
   };
-  // setInterval(func,time)
-  // 1000ms=1 second
+
   const handelStart = () => {
     setActive(true);
 
@@ -30,6 +29,7 @@ const App = () => {
 
   const handleReset = () => {
     setActive(false);
+    clearInterval(countRef.current);
     // setPause(false);
     setTimer(0);
   };
