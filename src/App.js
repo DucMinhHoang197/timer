@@ -36,8 +36,8 @@ const App = () => {
 
   return (
     <div className="container">
-      <h3>React Stopwatch</h3>
-      <div>
+      <h3>React watch</h3>
+      <div className="watch">
         <p>{FormatTime(timer)}</p>
       </div>
       <div className="button">
